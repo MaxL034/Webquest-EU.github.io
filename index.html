@@ -94,7 +94,6 @@
 
         .nav-container {
             width: 100%;
-            max-width: 1400px;
             margin: auto;
             padding: 18px 8%;
             display: flex;
@@ -142,33 +141,21 @@
             align-items: center;
             padding: 140px 8% 100px;
             overflow: hidden;
+            
         }
-
         .hero::before {
             content: "";
+            inset:0;
             position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(to right,
-                    rgba(5, 10, 25, 0.92),
-                    rgba(5, 10, 25, 0.72)),
-                url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1974&auto=format&fit=crop') center/cover;
-            z-index: -2;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: rgba(0, 51, 153, 0.2);
-            filter: blur(120px);
-            top: -100px;
-            right: -100px;
             z-index: -1;
+            background: url("https://images-ext-1.discordapp.net/external/WaHIqp_ptlGqLGQPem9nqtTQWbPDq0S8nsFaNVWgkOg/https/bilder.deutschlandfunk.de/5e/a7/3e/15/5ea73e15-8ad3-4c9c-8cf4-951e7cef99b3/eu-flagge-106-1920x1080.jpg?format=webp&width=1522&height=856");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(7px);
+            transform: scale(1.1);
         }
-
+    
         .hero-content {
             max-width: 850px;
             color: white;
@@ -611,6 +598,21 @@
                 padding: 28px;
             }
         }
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: #e2e8f0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--gold);
+            width: 0%;
+            border-radius: 0 2px 2px 0;
+        }
     </style>
 </head>
 
@@ -631,7 +633,11 @@
                 <li><a href="#prozess">Prozess</a></li>
                 <li><a href="#kriterien">Kriterien</a></li>
                 <li><a href="#praesentation">Präsentation</a></li>
+                <li><a href="/literatur">Literatur</a></li>
             </ul>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="readingProgress"></div>
         </div>
     </nav>
 
@@ -977,7 +983,7 @@
                         Offizielle Primärquelle der EU für registrierte
                         Lobby-Organisationen.
                     </p>
-                    <a href="#">Zur Plattform →</a>
+                    <a href="https://transparency-register.europa.eu/index_de">Zur Plattform →</a>
                 </div>
 
                 <div class="tool-card">
@@ -1110,19 +1116,31 @@
 
     <footer>
 
-        <h3>WebQuest — Europäische Politik & Lobbyismus</h3>
+        <h3>WebQuest — Brüssels Schattenmächte ?</h3>
 
         <p>
             Investigative Recherche • Demokratiebildung • Medienkompetenz
         </p>
 
         <p style="margin-top:20px; font-size:.9rem; opacity:.7;">
-            Design inspiriert von modernen Newsrooms &
-            datenjournalistischen Dashboard-Interfaces.
+          
         </p>
 
     </footer>
 
 </body>
+<script>
+       
+
+        // 2. Lesefortschrittsbalken oben
+        window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("readingProgress").style.width = scrolled + "%";
+        };
+
+        
+    </script>
 
 </html>
