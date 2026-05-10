@@ -143,18 +143,6 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(to right,
-                    rgba(5, 10, 25, 0.92),
-                    rgba(5, 10, 25, 0.72)),
-                url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1974&auto=format&fit=crop') center/cover;
-            z-index: -2;
-        }
-
         .hero::after {
             content: "";
             position: absolute;
@@ -251,6 +239,7 @@
         }
 
         .intro-card,
+        
         .stat-card {
             background: white;
             border-radius: 24px;
@@ -634,22 +623,19 @@
         <div class="nav-container">
             <div class="logo">
                 <i class="fa-solid fa-landmark"></i>
-                EU WebQuest
+                <a style="text-decoration:none;color: var(--light)" href="/Webquest-EU.github.io/">EU WebQuest</a>
+                
             </div>
 
             <ul class="nav-links">
-                <li><a href="/Webquest-EU.github.io/">WebQuest</a></li>
-                <li><a href="/Webquest-EU.github.io/literatur">Literatur</a></li>
+                
+                
             </ul>
         </div>
         <div class="progress-container">
             <div class="progress-bar" id="readingProgress"></div>
         </div>
     </nav>
-
-    <!-- HERO -->
-
-    
 
     <!-- EINLEITUNG -->
 
@@ -659,15 +645,30 @@
             <span>Impressum</span>
             <h2>Informationen</h2>
             <h3>Universität:</h3>
-                <p>Julius-Maximilians-Universität Würzburg</p>
+                <p>
+                    Julius-Maximilians-Universität Würzburg
+                </p>
             <h3>Dozent*in:</h3>
-                <p>Sabine Kehr</p>
+                <p>
+                    Sabine Kehr
+                </p>
             <h3>Seminar:</h3>   
-                <p>Medieneinsatz für den Sozialkundeuntterricht</p> 
+                <p>
+                    Medieneinsatz für den Sozialkundeuntterricht
+                </p> 
             <h3>Thema:</h3>
-                <p>Webquest</p>
+                <p>
+                    Webquest
+                </p>
             <h3>Ersteller:</h3>
-                <p>Maximilian Lang [2976585]</p>   
+                <p>
+                    Maximilian Lang  
+                    <a style="text-decoration:none;color:rgb(162, 163, 189)" href="/Webquest-EU.github.io/goodie/">[2976585]</a>
+                </p>   
+            <h3>Kontakt:</h3>
+                <p>
+                    maximilian.lang1@stud-mail.uni-wuerzburg.de
+                </p>
         </div>
 
         
@@ -685,7 +686,7 @@
         </p>
 
         <p style="margin-top:20px; font-size:.9rem; opacity:.7;">
-            <a href="/Webquest-EU.github.io/informationen">Informationen</a> <br>    
+            <a href="/Webquest-EU.github.io/literatur">Literatur</a> <br>    
         </p>
 
     </footer>
